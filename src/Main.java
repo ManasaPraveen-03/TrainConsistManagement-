@@ -1,7 +1,9 @@
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 import java.util.SortedSet;
 import java.util.TreeSet;
@@ -16,6 +18,7 @@ import java.util.TreeSet;
  * Use Case 3: Track Unique Bogie IDs
  * Use Case 4: Maintain Ordered Bogie IDs
  * Use Case 5: Preserve Insertion Order of Bogies
+ * Use Case 6: Map Bogie IDs to Capacity
  *
  * Description:
  * This class represents the entry point of the
@@ -29,16 +32,18 @@ import java.util.TreeSet;
  * - Tracks unique bogie IDs using HashSet
  * - Maintains ordered bogie IDs using TreeSet
  * - Preserves insertion order of bogie IDs using LinkedHashSet
+ * - Maps bogie IDs to their seating capacity using HashMap
  * - Displays the updated bogie count
  * - Displays the current train consist
  * - Prevents duplicate bogie IDs
  * - Maintains sorted order of bogie IDs
  * - Maintains insertion order of bogie IDs
+ * - Associates each bogie with its capacity
  *
  * The goal is to demonstrate startup flow,
  * dynamic addition of bogies, uniqueness handling,
- * sorted ordering, and insertion-order preservation
- * using Java Collection Framework classes.
+ * sorted ordering, insertion-order preservation,
+ * and key-value mapping using Java Collection Framework classes.
  *
  * @author ManasaPraveen-03
  * @version 1.0
@@ -108,5 +113,15 @@ public class Main {
         System.out.println("Insertion order of bogies preserved successfully.");
         System.out.println("Insertion-order bogie count: " + insertionOrderBogies.size());
         System.out.println("Insertion-order bogie IDs: " + insertionOrderBogies);
+
+        // UC6 - Map bogie IDs to capacity using HashMap
+        Map<String, Integer> bogieCapacityMap = new HashMap<>();
+        bogieCapacityMap.put("B1", 72);
+        bogieCapacityMap.put("B2", 64);
+        bogieCapacityMap.put("B3", 80);
+
+        System.out.println("Bogie capacities mapped successfully.");
+        System.out.println("Number of bogies with capacity mapping: " + bogieCapacityMap.size());
+        System.out.println("Bogie capacity details: " + bogieCapacityMap);
     }
 }
