@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
 import java.util.SortedSet;
@@ -14,6 +15,7 @@ import java.util.TreeSet;
  * Use Case 2: Add Passenger Bogies to Train
  * Use Case 3: Track Unique Bogie IDs
  * Use Case 4: Maintain Ordered Bogie IDs
+ * Use Case 5: Preserve Insertion Order of Bogies
  *
  * Description:
  * This class represents the entry point of the
@@ -26,15 +28,17 @@ import java.util.TreeSet;
  * - Adds passenger bogies dynamically using ArrayList
  * - Tracks unique bogie IDs using HashSet
  * - Maintains ordered bogie IDs using TreeSet
+ * - Preserves insertion order of bogie IDs using LinkedHashSet
  * - Displays the updated bogie count
  * - Displays the current train consist
  * - Prevents duplicate bogie IDs
  * - Maintains sorted order of bogie IDs
+ * - Maintains insertion order of bogie IDs
  *
  * The goal is to demonstrate startup flow,
- * dynamic addition of bogies, uniqueness
- * handling using Set and HashSet, and
- * sorted ordering using SortedSet and TreeSet.
+ * dynamic addition of bogies, uniqueness handling,
+ * sorted ordering, and insertion-order preservation
+ * using Java Collection Framework classes.
  *
  * @author ManasaPraveen-03
  * @version 1.0
@@ -92,5 +96,17 @@ public class Main {
         System.out.println("Ordered bogie IDs maintained successfully.");
         System.out.println("Ordered bogie count: " + orderedBogieIds.size());
         System.out.println("Ordered bogie IDs: " + orderedBogieIds);
+
+        // UC5 - Preserve insertion order using LinkedHashSet
+        Set<String> insertionOrderBogies = new LinkedHashSet<>();
+        insertionOrderBogies.add("B3");
+        insertionOrderBogies.add("B1");
+        insertionOrderBogies.add("B2");
+        insertionOrderBogies.add("B2");
+        insertionOrderBogies.add("B1");
+
+        System.out.println("Insertion order of bogies preserved successfully.");
+        System.out.println("Insertion-order bogie count: " + insertionOrderBogies.size());
+        System.out.println("Insertion-order bogie IDs: " + insertionOrderBogies);
     }
 }
