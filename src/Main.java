@@ -7,6 +7,7 @@ import java.util.List;
  * ================================================================
  *
  * Use Case 1: Initialize Train and Display Consist Summary
+ * Use Case 2: Add Passenger Bogies to Train
  *
  * Description:
  * This class represents the entry point of the
@@ -16,18 +17,18 @@ import java.util.List;
  * - Starts execution from the main() method
  * - Displays a welcome message
  * - Initializes an empty train consist
- * - Displays the initial bogie count
+ * - Adds passenger bogies dynamically using ArrayList
+ * - Displays the updated bogie count
+ * - Displays the current train consist
  *
- * No bogie addition logic is implemented yet.
- *
- * The goal is to establish the application startup flow
- * and dynamic collection initialization.
+ * The goal is to demonstrate startup flow and
+ * dynamic addition of bogies using ArrayList.
  *
  * @author ManasaPraveen-03
  * @version 1.0
  */
 
-public class Main {
+public class TrainConsistManagementApp {
 
     /**
      * Application entry point.
@@ -45,8 +46,17 @@ public class Main {
         // Initialize empty train consist using ArrayList
         List<String> trainConsist = new ArrayList<>();
 
-        // Display consist summary
+        // UC1 output
         System.out.println("Train consist initialized.");
         System.out.println("Initial bogie count: " + trainConsist.size());
+
+        // UC2 - Add passenger bogies
+        trainConsist.add("B1");
+        trainConsist.add("B2");
+        trainConsist.add("B3");
+
+        System.out.println("Passenger bogies added successfully.");
+        System.out.println("Updated bogie count: " + trainConsist.size());
+        System.out.println("Current train consist: " + trainConsist);
     }
 }
